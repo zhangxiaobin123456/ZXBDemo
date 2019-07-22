@@ -5,29 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.test.MainHomeActivity">
+    tools:context="com.example.test.process.TwoActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-        <TextView
-            android:id="@+id/tv_cardview"
-            style="@style/text_style"
-            android:text="CardView"
 
-            />
 
         <TextView
-            android:id="@+id/tv_toolbar"
-            android:text="ToolBar"
-            style="@style/text_style"/>
-
-        <TextView
-            android:id="@+id/tv_process"
-            android:text="Process"
+            android:id="@+id/tv_totwo"
+            android:text="我是TwoActivity"
             style="@style/text_style"/>
 
     </LinearLayout>
-
 </android.support.constraint.ConstraintLayout>
