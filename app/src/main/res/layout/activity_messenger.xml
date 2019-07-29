@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.test.process.OneActivity">
+    tools:context="com.example.test.process.MessengerActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,15 +14,8 @@
 
 
         <TextView
-            android:id="@+id/tv_totwo"
-            android:text="toTwoActivity"
-            style="@style/text_style"/>
-
-        <TextView
-            android:id="@+id/tv_messenger"
-            android:text="toMessengerActivity"
+            android:text="我是MessengerActivity"
             style="@style/text_style"/>
 
     </LinearLayout>
-
 </android.support.constraint.ConstraintLayout>

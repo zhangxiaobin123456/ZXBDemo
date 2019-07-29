@@ -9,6 +9,11 @@ import android.widget.TextView;
 
 import com.example.test.bean.User;
 import com.example.test.process.OneActivity;
+import com.yanzhenjie.permission.Action;
+import com.yanzhenjie.permission.AndPermission;
+import com.yanzhenjie.permission.Permission;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +38,22 @@ public class MainHomeActivity extends AppCompatActivity {
 
         User.mUserName = "聪明鬼";
         Log.e(TAG,User.mUserName);
+
+        getPermission();
+    }
+    private void getPermission() {
+        AndPermission.with(this)
+                .runtime()
+                .permission(Permission.READ_EXTERNAL_STORAGE,
+                        Permission.WRITE_EXTERNAL_STORAGE
+
+                )
+                .onGranted(new Action<List<String>>() {
+                    @Override
+                    public void onAction(List<String> data) {
+                    }
+                })
+                .start();
     }
 
     @Override
