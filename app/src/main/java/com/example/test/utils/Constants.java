@@ -10,4 +10,5 @@ public class Constants {
     public static final String PATH = Environment.getExternalStorageDirectory().getPath() + "/zxb/";
     public static final int MSGCLIENT = 0;
     public static final int MSGSERVICE = 1;
+    public static final int BOOKARRIVED = 100;
 }

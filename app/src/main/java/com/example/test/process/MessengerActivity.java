@@ -28,8 +28,8 @@ public class MessengerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_messenger);
         initData();
     }
-    private Messenger mReplyMessenger = new Messenger(new MessengerHandler());
-    private static class MessengerHandler extends Handler{
+    private Messenger mReplyMessenger = new Messenger(new MessengerActivityHandler ());
+    private static class MessengerActivityHandler  extends Handler{
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what){
@@ -48,12 +48,17 @@ public class MessengerActivity extends AppCompatActivity {
     private ServiceConnection mServiceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
+            //创建Messenger
             Messenger messenger = new Messenger(service);
-
+            //创建Message
             Message message = Message.obtain();
+            //标识
             message.what = Constants.MSGCLIENT;
+            //创建Bundle
             Bundle bundle = new Bundle();
-            bundle.putString("msg","hello , my name is client");
+            //保存数据
+            bundle.putString("msg","你好啊，送你一朵小发发");
+            //赋值
             message.setData(bundle);
 
 
@@ -62,6 +67,7 @@ public class MessengerActivity extends AppCompatActivity {
              */
             message.replyTo = mReplyMessenger;
             try {
+                //发送数据
                 messenger.send(message);
             } catch (RemoteException e) {
                 e.printStackTrace();
@@ -76,8 +82,6 @@ public class MessengerActivity extends AppCompatActivity {
     private void initData() {
         Intent intent = new Intent(this, MessengerService.class);
         bindService(intent,mServiceConnection, Context.BIND_AUTO_CREATE);
-
-
     }
 
     @Override

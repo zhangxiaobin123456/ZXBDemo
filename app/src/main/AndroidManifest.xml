@@ -4,6 +4,10 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="Permission.BookManagerService"/>
+
+    <permission android:name="Permission.BookManagerService"
+                android:protectionLevel="normal" />
 
     <application
         android:name=".MyApplication"
@@ -61,6 +65,14 @@
         </service>
 
         <activity android:name=".process.MessengerActivity">
+        </activity>
+
+        <service
+            android:name=".aidl.BookManagerService"
+            android:process=":BookManagerService">
+        </service>
+
+        <activity android:name=".aidl.AidlActivity">
         </activity>
     </application>
 

@@ -28,15 +28,21 @@ public class MessengerService extends Service {
             switch (msg.what){
                 case Constants.MSGCLIENT:
                     Log.e(TAG, "handleMessage: clientmessage"+msg.getData().getString("msg"));
-
+                    //拿到Messenger对象
                     Messenger messenger = msg.replyTo;
+                    //创建Message
                     Message replyMessage = Message.obtain();
+                    //标识
                     replyMessage.what = Constants.MSGSERVICE;
+                    //创建Bundle
                     Bundle bundle = new Bundle();
+                    //保存数据
                     bundle.putString("reply","收到了你的消息，但我就是不想理你");
+                    //赋值
                     replyMessage.setData(bundle);
 
                     try {
+                        //发送数据
                         messenger.send(replyMessage);
                     } catch (RemoteException e) {
                         e.printStackTrace();
