@@ -5,9 +5,14 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="Permission.BookManagerService"/>
+    <uses-permission android:name="Permission.BookContentProvider"/>
 
-    <permission android:name="Permission.BookManagerService"
-                android:protectionLevel="normal" />
+    <permission
+        android:name="Permission.BookManagerService"
+        android:protectionLevel="normal"/>
+    <permission
+        android:name="Permission.BookContentProvider"
+        android:protectionLevel="normal"/>
 
     <application
         android:name=".MyApplication"
@@ -73,6 +78,16 @@
         </service>
 
         <activity android:name=".aidl.AidlActivity">
+        </activity>
+
+        <provider
+            android:name=".provider.BookContentProvider"
+            android:authorities="com.example.test.provider.BookContentProvider"
+            android:permission="Permission.BookContentProvider"
+            android:process=":BookContentProvider">
+        </provider>
+
+        <activity android:name=".provider.ProviderActivity">
         </activity>
     </application>
 

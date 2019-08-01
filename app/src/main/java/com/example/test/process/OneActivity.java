@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.test.R;
 import com.example.test.aidl.AidlActivity;
 import com.example.test.bean.User;
+import com.example.test.provider.ProviderActivity;
 import com.example.test.utils.Constants;
 
 import java.io.File;
@@ -74,7 +75,7 @@ public class OneActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.tv_totwo, R.id.tv_messenger,R.id.tv_aidl})
+    @OnClick({R.id.tv_totwo, R.id.tv_messenger,R.id.tv_aidl,R.id.tv_provider})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_totwo:
@@ -86,6 +87,9 @@ public class OneActivity extends AppCompatActivity {
                 break;
             case R.id.tv_aidl:
                 startActivity(new Intent(OneActivity.this, AidlActivity.class));
+                break;
+            case R.id.tv_provider:
+                startActivity(new Intent(OneActivity.this, ProviderActivity.class));
                 break;
         }
     }

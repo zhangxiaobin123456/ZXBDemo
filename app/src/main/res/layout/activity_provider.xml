@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.test.process.OneActivity">
+    tools:context="com.example.test.provider.ProviderActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,24 +14,28 @@
 
 
         <TextView
-            android:id="@+id/tv_totwo"
-            android:text="toTwoActivity"
+            android:text="我是ProviderActivity"
             style="@style/text_style"/>
 
         <TextView
-            android:id="@+id/tv_messenger"
-            android:text="toMessengerActivity"
+            android:id="@+id/tv_add"
+            android:text="添加数据"
             style="@style/text_style"/>
 
         <TextView
-            android:id="@+id/tv_aidl"
-            android:text="toAidlActivity"
+            android:id="@+id/tv_del"
+            android:text="删除数据"
             style="@style/text_style"/>
+
         <TextView
-            android:id="@+id/tv_provider"
-            android:text="toProviderActivity"
+            android:id="@+id/tv_update"
+            android:text="修改数据"
+            style="@style/text_style"/>
+
+        <TextView
+            android:id="@+id/tv_query"
+            android:text="查询数据"
             style="@style/text_style"/>
 
     </LinearLayout>
-
 </android.support.constraint.ConstraintLayout>

@@ -12,15 +12,21 @@ import java.io.Serializable;
 public class Book implements Parcelable{
     private int bookId;
     private String bookName;
+    private String price;
 
-    public Book(int bookId,String bookName){
+
+
+    public Book(int bookId, String bookName){
         this.bookId = bookId;
         this.bookName = bookName;
+    }
+    public Book(){
     }
 
     protected Book(Parcel in) {
         bookId = in.readInt();
         bookName = in.readString();
+        price = in.readString();
     }
 
     public static final Creator<Book> CREATOR = new Creator<Book>() {
@@ -50,6 +56,13 @@ public class Book implements Parcelable{
     public void setBookName(String bookName) {
         this.bookName = bookName;
     }
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
 
     @Override
     public int describeContents() {
@@ -60,5 +73,6 @@ public class Book implements Parcelable{
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(bookId);
         dest.writeString(bookName);
+        dest.writeString(price);
     }
 }
