@@ -32,6 +32,11 @@
             android:text="toProviderActivity"
             style="@style/text_style"/>
 
+        <TextView
+            android:id="@+id/tv_socket"
+            android:text="toTCPClientActivity"
+            style="@style/text_style"/>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

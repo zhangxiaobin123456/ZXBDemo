@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="Permission.BookManagerService"/>
     <uses-permission android:name="Permission.BookContentProvider"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <permission
         android:name="Permission.BookManagerService"
@@ -88,6 +90,14 @@
         </provider>
 
         <activity android:name=".provider.ProviderActivity">
+        </activity>
+
+        <service android:name=".socket.TCPServerService"
+            android:process=":TCPServerService"
+            >
+
+        </service>
+        <activity android:name=".socket.TCPClientActivity">
         </activity>
     </application>
 
