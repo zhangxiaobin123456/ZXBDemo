@@ -56,8 +56,6 @@ public class MainHomeActivity extends AppCompatActivity {
             charz[i] ^= '^';
         }
         Log.e(TAG, "onCreate: "+new String(charz));
-        final CountDownLatch countDownLatch = new CountDownLatch(1);
-
 
     }
     private void getPermission() {
