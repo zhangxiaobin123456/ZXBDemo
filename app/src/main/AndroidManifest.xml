@@ -92,12 +92,20 @@
         <activity android:name=".provider.ProviderActivity">
         </activity>
 
-        <service android:name=".socket.TCPServerService"
-            android:process=":TCPServerService"
-            >
-
+        <service
+            android:name=".socket.TCPServerService"
+            android:process=":TCPServerService">
         </service>
+
         <activity android:name=".socket.TCPClientActivity">
+        </activity>
+
+        <service
+            android:name=".binders.BinderPoolService"
+            android:process=":BinderPoolService">
+        </service>
+
+        <activity android:name=".binders.BinderPoolActivity">
         </activity>
     </application>
 

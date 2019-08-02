@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.test.R;
 import com.example.test.aidl.AidlActivity;
 import com.example.test.bean.User;
+import com.example.test.binders.BinderPoolActivity;
 import com.example.test.provider.ProviderActivity;
 import com.example.test.socket.TCPClientActivity;
 import com.example.test.utils.Constants;
@@ -76,7 +77,7 @@ public class OneActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.tv_totwo, R.id.tv_messenger,R.id.tv_aidl,R.id.tv_provider,R.id.tv_socket})
+    @OnClick({R.id.tv_totwo, R.id.tv_messenger,R.id.tv_aidl,R.id.tv_provider,R.id.tv_socket,R.id.tv_binderpool})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_totwo:
@@ -94,6 +95,9 @@ public class OneActivity extends AppCompatActivity {
                 break;
             case R.id.tv_socket:
                 startActivity(new Intent(OneActivity.this, TCPClientActivity.class));
+                break;
+            case R.id.tv_binderpool:
+                startActivity(new Intent(OneActivity.this, BinderPoolActivity.class));
                 break;
         }
     }

@@ -37,6 +37,11 @@
             android:text="toTCPClientActivity"
             style="@style/text_style"/>
 
+        <TextView
+            android:id="@+id/tv_binderpool"
+            android:text="toBinderPoolActivity"
+            style="@style/text_style"/>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

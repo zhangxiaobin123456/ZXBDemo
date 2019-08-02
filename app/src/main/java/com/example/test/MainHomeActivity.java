@@ -14,6 +14,7 @@ import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.Permission;
 
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,6 +41,70 @@ public class MainHomeActivity extends AppCompatActivity {
         Log.e(TAG,User.mUserName);
 
         getPermission();
+
+//        int i = 0 | 0;
+//        Log.e(TAG, "onCreate: "+i);
+
+        char[] chars = "abcdefg".toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            chars[i] ^= '^';
+        }
+        Log.e(TAG, "onCreate: "+new String(chars));
+
+        char[] charz = new String(chars).toCharArray();
+        for (int i = 0; i < charz.length; i++) {
+            charz[i] ^= '^';
+        }
+        Log.e(TAG, "onCreate: "+new String(charz));
+        final CountDownLatch countDownLatch = new CountDownLatch(1);
+
+//        synchronized (Thread.currentThread()){
+//           Thread thread =  new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//
+//                    try {
+//                        countDownLatch.wait();
+//
+//
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                    try {
+//                        Thread.sleep(1000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                    countDownLatch.countDown();
+//                    Log.e(TAG, "onCreate: 嘤嘤嘤");
+//                }
+//            });
+//
+//            thread.start();
+//            try {
+//                thread.wait();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Thread.sleep(3000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                countDownLatch.countDown();
+//                Log.e(TAG, "onCreate: 胖哥贼帅");
+//            }
+//        }).start();
+
+
+
+
+
     }
     private void getPermission() {
         AndPermission.with(this)

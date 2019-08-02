@@ -4,6 +4,8 @@ import android.app.Application;
 import android.os.Process;
 import android.util.Log;
 
+import com.example.test.binders.BinderPool;
+import com.example.test.binders.BinderPoolActivity;
 import com.example.test.utils.ProcessUtils;
 
 /**
@@ -18,5 +20,6 @@ public class MyApplication extends Application{
 
         String processName = ProcessUtils.getProcessName(getApplicationContext(), Process.myPid());
         Log.e(TAG, "onCreate: "+processName);
+//        BinderPool binderPool = BinderPool.getInstance(this);
     }
 }
