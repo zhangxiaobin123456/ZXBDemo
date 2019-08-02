@@ -58,52 +58,6 @@ public class MainHomeActivity extends AppCompatActivity {
         Log.e(TAG, "onCreate: "+new String(charz));
         final CountDownLatch countDownLatch = new CountDownLatch(1);
 
-//        synchronized (Thread.currentThread()){
-//           Thread thread =  new Thread(new Runnable() {
-//                @Override
-//                public void run() {
-//
-//                    try {
-//                        countDownLatch.wait();
-//
-//
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                    try {
-//                        Thread.sleep(1000);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                    countDownLatch.countDown();
-//                    Log.e(TAG, "onCreate: 嘤嘤嘤");
-//                }
-//            });
-//
-//            thread.start();
-//            try {
-//                thread.wait();
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    Thread.sleep(3000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//                countDownLatch.countDown();
-//                Log.e(TAG, "onCreate: 胖哥贼帅");
-//            }
-//        }).start();
-
-
-
-
 
     }
     private void getPermission() {
